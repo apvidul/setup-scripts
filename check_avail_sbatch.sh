@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -c 1                               
-#SBATCH -t 05-00:00                         # Runtime in D-HH:MM format
+#SBATCH -t 06-00:00                         # Runtime in D-HH:MM format
 #SBATCH -p long                         
 #SBATCH --mem=1M                      
 #SBATCH -o status.out                
