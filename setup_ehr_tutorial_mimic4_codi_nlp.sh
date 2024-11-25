@@ -25,7 +25,7 @@ echo "Workspace has been set up here ${LOCATION}/EHR_TUTORIAL_WORKSPACE"
 
 # Download and extract MIMIC Data Prep scripts from GitHub
 echo "Downloading and extracting MIMIC Data Prep scripts from GitHub..."
-wget https://github.com/apvidul/MIMIC-Data-Prep/archive/refs/heads/main.zip -O mimic-data-prep.zip
+wget https://github.com/apvidul/EHR-Processing-Tutorial/archive/refs/heads/main.zip -O mimic-data-prep.zip
 unzip -q mimic-data-prep.zip -d "${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts"
 mv "${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/MIMIC-Data-Prep-main/"* "${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/"
 
