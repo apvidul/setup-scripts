@@ -59,20 +59,17 @@ if ! command -v conda &> /dev/null; then
   exit 1
 fi
 
-# Download the Conda environment YAML file to the scripts directory
-echo "Downloading the Conda environment YAML file..."
-wget "https://raw.githubusercontent.com/apvidul/setup-scripts/refs/heads/main/ehrenv_environment.yml" -P "${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/"
-
-# Set up the Conda environment
-echo "Setting up the Conda environment from ehrenv_environment.yml..."
-conda env create -f "${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/ehrenv_environment.yml"
+# Create the Conda environment manually
+echo "Creating the Conda environment ehr_tutorial"
+conda create --yes --name ehr_tutorial pandas wordcloud jupyter tqdm matplotlib
 
 # Reminder to activate the environment
-echo "Conda environment setup complete. To activate the environment, use 'source activate ehrenv'."
+echo "Conda environment setup complete. To activate the environment, use 'conda activate ehr_tutorial'."
 EOF
 
 # Submit the SLURM job for setting up the Conda environment
 sbatch ${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/setup_conda_env.sh
+
 
 # Create the SLURM script for downloading MIMIC data
 cat <<EOF > ${LOCATION}/EHR_TUTORIAL_WORKSPACE/scripts/download_mimic_3_1.sh
