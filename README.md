@@ -6,7 +6,9 @@ conda create -n vllm_inference python=3.10 -y
 conda activate vllm_inference
 module load  gcc/9.2.0 cuda/12.1
 
-pip install -r requirements.txt
+pip install -r vllm_requirements.txt
+
+python test_genie.py
 ```
 
 
